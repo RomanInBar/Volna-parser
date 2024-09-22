@@ -18,12 +18,12 @@ class Scripts:
         data_from_file = self.file.read_file(patch=patch)
         if data_from_file:
             self._save_change_data(data_from_file)
-        callback(f"Файл создан и скачен на рабочий стол {self.file.filename}")
+        callback(f'Завершено\nНа рабочем столе создан файл "{self.file.filename}"')
 
     def start_parser_scripts(self, callback: Callable[[str], None]) -> None:
         data_from_url = self.parser.get_data_from_urls()
         self._save_change_data(data_from_url)
-        callback(f"Файл создан и скачен на рабочий стол {self.file.filename}")
+        callback(f'Завершено\nНа рабочем столе создан файл "{self.file.filename}"')
 
 
 scripts = Scripts()

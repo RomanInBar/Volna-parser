@@ -111,9 +111,9 @@ class ParserMenu(tk.Frame):
     def delete_value(self):
         logging.info("Инициализация удаления значений из базы данных")
         try:
-            removed = self.table.selection()[0]
+            removed = self.table.selection()
             assert removed
-            old_value, new_value = self.table.item(removed)["values"]
+            old_value, new_value = self.table.item(removed[0])["values"]
             self.objects.remove(current_value=old_value)
             logging.info("Удаление завершено")
             self.parent.refresh(self._name)
