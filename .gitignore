@@ -13,6 +13,7 @@ __pycache__/
 env/
 .env
 *.db
+.idea/
 build/
 develop-eggs/
 dist/
