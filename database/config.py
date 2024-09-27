@@ -6,12 +6,12 @@ load_dotenv()
 
 
 class Configuration:
-    DRIVER = 'sqlite'
-    DB_NAME: str = 'storage.db'
+    DRIVER = os.getenv('DRIVER')
+    DB_NAME: str = os.getenv('DB_NAME')
 
     @property
     def get_url(self):
-        return f"{self.DRIVER}:///{self.DB_NAME}"
+        return f"{self.DRIVER}:///database/{self.DB_NAME}"
 
 
 conf = Configuration()

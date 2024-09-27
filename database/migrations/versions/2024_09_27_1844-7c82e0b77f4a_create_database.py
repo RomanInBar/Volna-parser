@@ -1,19 +1,20 @@
 """create database
 
-Revision ID: 4e0cfa6d0637
-Revises: 
-Create Date: 2024-05-19 15:59:46.076838
+Revision ID: 7c82e0b77f4a
+Revises: 276db51523d6
+Create Date: 2024-09-27 18:44:04.802116
 
 """
 
 from typing import Sequence, Union
 
-import sqlalchemy as sa
 from alembic import op
+import sqlalchemy as sa
+
 
 # revision identifiers, used by Alembic.
-revision: str = "4e0cfa6d0637"
-down_revision: Union[str, None] = None
+revision: str = "7c82e0b77f4a"
+down_revision: Union[str, None] = "276db51523d6"
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 
@@ -27,7 +28,6 @@ def upgrade() -> None:
         sa.Column("replace", sa.String(), nullable=False),
         sa.PrimaryKeyConstraint("id"),
         sa.UniqueConstraint("current_value"),
-        sa.UniqueConstraint("replace"),
     )
     op.create_table(
         "urls",
