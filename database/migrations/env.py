@@ -3,11 +3,6 @@ from logging.config import fileConfig
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
-from pathlib import Path
-import sys
-
-sys.path.append(str(Path(__file__).parents)[3])
-
 from alembic import context
 
 from database.config import conf
